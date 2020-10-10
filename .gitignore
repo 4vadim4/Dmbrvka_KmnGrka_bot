@@ -1,0 +1,10 @@
+*.log
+*.pyc
+*.pot
+
+# virtualenv
+venv/
+.env/
+
+#pyCharm prof files
+.idea/
