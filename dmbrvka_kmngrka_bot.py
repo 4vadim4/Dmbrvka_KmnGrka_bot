@@ -29,7 +29,7 @@ def send_photo(update, context):
     sender_id, username, first_name, last_name = get_data(update.message)
     description = update.message.caption if update.message.caption else ''
 
-    context.bot.send_photo(chat_id=sender_id, photo=update.message.photo[0].file_id,
+    context.bot.send_photo(chat_id=user_id, photo=update.message.photo[0].file_id,
                            caption=description if description else None)
     logger.info('%s: (%s - %s %s) leave a photo' % (sender_id, username, first_name, last_name))
 
@@ -40,7 +40,7 @@ def send_video(update, context):
     sender_id, username, first_name, last_name = get_data(update.message)
     description = update.message.caption if update.message.caption else ''
 
-    context.bot.send_video(chat_id=sender_id, video=update.message.video.file_id,
+    context.bot.send_video(chat_id=user_id, video=update.message.video.file_id,
                            caption=description if description else None)
     logger.info('%s: (%s - %s %s) leave a video' % (sender_id, username, first_name, last_name))
 
